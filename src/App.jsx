@@ -53,10 +53,10 @@ function App() {
   });
 
   return (
-    <div className={`min-h-screen pt-12 pb-12 transition-colors duration-300 ${isDarkMode ? 'bg-dark' : 'bg-light'}`}>
+    <div className={`min-h-screen pt-6 md:pt-12 pb-12 transition-colors duration-300 ${isDarkMode ? 'bg-dark' : 'bg-light'}`}>
       <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} currentFilter={filter} setFilter={setFilter} />
-      <main className="mx-28 my-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <main className="mx-4 md:mx-28 my-6 md:my-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {filteredExtensions.map((extension) => (
             <Cards key={extension.id} id={extension.id} name={extension.name} description={extension.description} icon={extension.icon} isDarkMode={isDarkMode} isActive={cardStatuses[extension.id]} onToggle={handleStatusToggle} />
           ))}
